@@ -1,0 +1,92 @@
+html, body{
+	height:100%;
+	padding:0;
+	margin:0;
+	background-color: #dfdfdf;
+}
+
+.container{
+	width: 90%;
+	height:600px;
+	padding:0;
+	margin:80px auto 0 auto;
+	box-sizing: border-box;
+	background-color: #fff;
+	position: relative;
+}
+
+#about{
+	background: url(../assets/chair.jpg) 75%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height:50%;
+	width:40%;
+	position: absolute;
+	left:0px;
+	right:0px;
+	-webkit-transition: width 2s ease, height 2s ease, z-index 2s ease;
+	-moz-transition: width 2s ease, height 2s ease, z-index 2s ease;
+	-o-transition: width 2s ease, height 2s ease, z-index 2s ease;
+	transition: width 2s ease, height 2s ease, z-index 2s ease-out;	
+	z-index: 0;
+}
+
+#portfolio{
+	height:60%;
+	width:60%;
+	position: absolute;
+	background-color: #cd2584;
+	right:0px;
+	top:0px;
+	-webkit-transition: width 2s ease, height 2s ease, z-index 2s ease;
+	-moz-transition: width 2s ease, height 2s ease, z-index 2s ease;
+	-o-transition: width 2s ease, height 2s ease, z-index 2s ease;
+	transition: width 2s ease, height 2s ease, z-index 2s ease-out;	
+	z-index: 0;
+}
+
+#contact{
+	height:50%;
+	width:40%;
+	position: absolute;
+	bottom:0px;
+	left:0px;
+	background-color: #e8a065;
+	margin-top: -60px;
+	z-index: 0;
+	-webkit-transition: width 2s ease, height 2s ease, z-index 2s ease;
+	-moz-transition: width 2s ease, height 2s ease, z-index 2s ease;
+	-o-transition: width 2s ease, height 2s ease, z-index 2s ease;
+	transition: width 2s ease, height 2s ease, z-index 2s ease-out;	
+	z-index: 0;
+}
+
+#portfolio.outa, 
+#about.outa, 
+#contact.outa{
+	
+	width:100%;
+	height:100%;
+	-webkit-transition: width 2s ease, height 2s ease;
+	-moz-transition: width 2s ease, height 2s ease;
+	-o-transition: width 2s ease, height 2s ease;
+	transition: width 2s ease, height 2s ease;	
+	z-index: 100;
+}
+
+#close{
+	font-size: 32px;
+	line-height: 24px;
+	z-index: 5;
+	position: absolute;
+	right:5px;
+	top:5px;
+	display:none;
+}
+
+#close.visible{
+	display: inline-block;
+	z-index: 101;
+}
