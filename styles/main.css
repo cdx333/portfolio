@@ -1,92 +1,191 @@
-html, body{
+body{
 	height:100%;
 	padding:0;
 	margin:0;
-	background-color: #dfdfdf;
+	background-color: #eee;
+	font-family: 'Arial', sans-serif;
+}
+
+#wrapper{
+	width:10%;
+	height:10%;
+}
+
+#meter {
+	width:100%;
+	height:100%;
+	transform: rotate(180deg);
+}
+
+.mask{
+	transition: all 1s ease-in-out;
+}
+
+text{
+  transform: translate(110%, 100%) rotate(180deg);
 }
 
 .container{
 	width: 90%;
+	min-width: 840px;
 	height:600px;
 	padding:0;
-	margin:80px auto 0 auto;
+	margin:50px auto 0 auto;
 	box-sizing: border-box;
-	background-color: #fff;
 	position: relative;
+}
+
+h3{
+	margin: 0px;
+	padding:10px 0px;
 }
 
 #about{
 	background: url(../assets/chair.jpg) 75%;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
 	height:50%;
 	width:40%;
-	position: absolute;
 	left:0px;
+	color:white;
 	right:0px;
-	-webkit-transition: width 2s ease, height 2s ease, z-index 2s ease;
-	-moz-transition: width 2s ease, height 2s ease, z-index 2s ease;
-	-o-transition: width 2s ease, height 2s ease, z-index 2s ease;
-	transition: width 2s ease, height 2s ease, z-index 2s ease-out;	
-	z-index: 0;
 }
 
 #portfolio{
 	height:60%;
 	width:60%;
-	position: absolute;
-	background-color: #cd2584;
+	background-color: #cd5e84;
 	right:0px;
 	top:0px;
-	-webkit-transition: width 2s ease, height 2s ease, z-index 2s ease;
-	-moz-transition: width 2s ease, height 2s ease, z-index 2s ease;
-	-o-transition: width 2s ease, height 2s ease, z-index 2s ease;
-	transition: width 2s ease, height 2s ease, z-index 2s ease-out;	
-	z-index: 0;
+	margin-top:12%;
 }
 
 #contact{
 	height:50%;
 	width:40%;
-	position: absolute;
 	bottom:0px;
 	left:0px;
-	background-color: #e8a065;
+	background-color: #e8b965;
 	margin-top: -60px;
-	z-index: 0;
-	-webkit-transition: width 2s ease, height 2s ease, z-index 2s ease;
-	-moz-transition: width 2s ease, height 2s ease, z-index 2s ease;
-	-o-transition: width 2s ease, height 2s ease, z-index 2s ease;
-	transition: width 2s ease, height 2s ease, z-index 2s ease-out;	
+}
+
+#about,
+#portfolio,
+#contact{
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: absolute;
+
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 	z-index: 0;
 }
 
-#portfolio.outa, 
-#about.outa, 
+#portfolio.outa,
+#about.outa,
 #contact.outa{
-	
+	margin-top: 0px;
 	width:100%;
 	height:100%;
-	-webkit-transition: width 2s ease, height 2s ease;
-	-moz-transition: width 2s ease, height 2s ease;
-	-o-transition: width 2s ease, height 2s ease;
-	transition: width 2s ease, height 2s ease;	
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 	z-index: 100;
+
+	box-shadow: 5px 5px 10px #888888;
 }
 
 #close{
 	font-size: 32px;
 	line-height: 24px;
-	z-index: 5;
+	z-index: 999;
 	position: absolute;
+	display: none;
+	cursor: pointer;
 	right:5px;
 	top:5px;
-	display:none;
+	color:white;
 }
 
-#close.visible{
-	display: inline-block;
-	z-index: 101;
+.paneOverlay{
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0);
+	-webkit-transition: background 0.3s ease;
+	-moz-transition: background 0.3s ease;
+	-o-transition: background 0.3s ease;
+	transition: background 0.3s ease;
+}
+
+.paneOverlay.darken{
+	background: rgba(0, 0, 0, 0.7);
+}
+
+#about-subjects{
+	width: 85%;
+	height:85%;
+	margin-left: 5%;
+	display: none;
+	padding-top: 40px;
+}
+
+#about-subjects>div{
+	padding-left:15px;
+	border: 2px solid white;
+	margin: 15px;
+	width:150px;
+	height:50px;
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+#about-subjects>div:hover{
+	opacity: 1;
+}
+
+#about-subjects>div.subjectContent{
+  cursor: default;
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+}
+
+#about-subjects>div,
+#about-subjects>div.subjectContent{
+	-webkit-transition: width 0.3s ease, height 0.3s ease;
+	-moz-transition: width 0.3s ease, height 0.3s ease;
+	-o-transition: width 0.3s ease, height 0.3s ease;
+	transition: width 0.3s ease, height 0.3s ease;
+}
+
+#personal-content{
+	overflow: hidden;
+	width:100%;
+	margin-top:60px;
+	display: none;
+}
+
+#personal-content h3{
+	text-align: center;
+}
+#family,
+#interests{
+
+	vertical-align: top;
+	width:30%;
+	height:70%;
+	margin-right: 2%;
+	display:inline-block;
+}
+
+#family{
+	margin-left: 20%;
+	margin-right: 5%;
+}
+
+#family-disclaimer{
+	font-size:0.6em;
 }
